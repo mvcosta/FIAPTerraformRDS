@@ -12,8 +12,8 @@ resource "aws_db_instance" "fiapdb" {
   allocated_storage      = 20 # Tamanho em GB
   storage_type           = "gp2"
   engine                 = "postgres"
-  engine_version         = "12.16"
-  instance_class         = "db.t2.micro"     # Tipo de instância
+  engine_version         = "15.5"
+  instance_class         = "db.t3.micro"     # Tipo de instância
   identifier             = local.db_credentials.dbInstanceIdentifier       # Identificador da instância RDS
   name                   = "fiap"            # Nome da base de dados dentro da instância
   username               = local.db_credentials.username        # Usuário do banco de dados
