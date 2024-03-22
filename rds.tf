@@ -18,7 +18,7 @@ resource "aws_db_instance" "fiapdb" {
   name                   = "fiap"            # Nome da base de dados dentro da instância
   username               = local.db_credentials.username        # Usuário do banco de dados
   password               = local.db_credentials.password # Senha do banco de dados
-  parameter_group_name   = "default.postgres12"
+  parameter_group_name   = "default.postgres15"
   vpc_security_group_ids = ["${data.terraform_remote_state.app.outputs.cluster_security_group}"]
   skip_final_snapshot    = true # Pula snapshot final ao destruir o banco de dados. Em produção, talvez queira definir como false.
   db_subnet_group_name   = aws_db_subnet_group.db_subnet.id
